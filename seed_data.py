@@ -16,6 +16,13 @@ from app.models import Employees, Positions
 # create connection from this script to Django project
 create_con()
 
+
+
+
+
+
+
+
 # Let`s localise Faker lib
 fake = Faker('ru_RU')
 
