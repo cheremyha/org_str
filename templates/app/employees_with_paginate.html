@@ -1,0 +1,86 @@
+<!doctype html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Список сотрудников</title>
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+</head>
+<body>
+    <! --Page content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 text-center">
+                {% block content %}
+                <form method="GET">
+                    {{ filter.form }}
+                    <input type="submit" value="Найти">
+                </form>
+                <table>
+                   <thead>
+                   <th>
+                       Позиция&nbsp; &nbsp;&nbsp;
+                   </th>
+                   <th>
+                       Имя&nbsp; &nbsp;&nbsp;
+                   </th>
+                   <th>
+                       Фамилия&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+                   </th>
+                   <th>
+                       Начало работы в компании&nbsp; &nbsp;&nbsp;
+                   </th>
+                   </thead>
+                    {% for employee in object_list %} &nbsp; &nbsp;&nbsp;
+                    <tr>
+                        <td>
+                            {{ employee.position.position_name }}&nbsp; &nbsp;&nbsp;
+                        </td>
+                        <td>
+                            {{ employee.first_name }}&nbsp; &nbsp;&nbsp;
+                        </td>
+                        <td>
+                            {{ employee.last_name }}&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+                        </td>
+                        <td>
+                            {{ employee.date_employment }}&nbsp; &nbsp;&nbsp;
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                <!-- Проверяем что поддерживается постраничный вывод -->
+                {% if is_paginated %}
+
+                {% if page_obj.has_previous %}
+                    <a href="?page=1">Первая</a>
+                    <a href="?page={{ page_obj.previous_page_number }}"><<<</a>
+                {% endif %}
+
+                {% for num in page_obj.paginator.page_range %}
+                    {% if page_obj.number == num %}
+                        <a>{{ num }}</a>
+                    {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                        <a href="?page={{ num }}">{{ num }}</a>
+                    {% endif %}
+                {% endfor %}
+
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">>>></a>
+                    <a href="?page={{ page_obj.paginator.num_pages }}">Последняя</a>
+                {% endif %}
+
+                {% endif %}
+
+                {% endblock content %}
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'vendor/jquery/jquery.slim.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+</body>
+</html>
