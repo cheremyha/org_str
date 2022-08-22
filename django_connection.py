@@ -1,8 +1,8 @@
 """
 Import this module to integrate your python script with the django project.
 """
-from django.core.wsgi import get_wsgi_application
 import os
+from django.core.wsgi import get_wsgi_application
 
 
 def create_con():

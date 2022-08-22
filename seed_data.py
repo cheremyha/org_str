@@ -16,13 +16,6 @@ from app.models import Employees, Positions
 # create connection from this script to Django project
 create_con()
 
-
-
-
-
-
-
-
 # Let`s localise Faker lib
 fake = Faker('ru_RU')
 
@@ -205,7 +198,6 @@ for cur_ss_id in all_seniors:
     cur_ss = get_employee(employee_id=cur_ss_id)
     for _ in range(number_middle_specialists):
         created_subordinate(chief_id=cur_ss.id, position_name='Специалист')
-
 
 # Let`s create junior specialists
 # Number of junior specialists for each senior specialist ( junior specialists == js )

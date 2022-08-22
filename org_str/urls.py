@@ -19,9 +19,9 @@ from app.views import EmployeesPaginator, show_employees, tree_menu
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('', include('protect.urls')),
     path('sign/', include('sign.urls')),
+    path('admin/', admin.site.urls),
     path('tree', show_employees),
     path('paginate_list', EmployeesPaginator.as_view()),
     path('tree_menu', tree_menu),
