@@ -30,7 +30,7 @@ docker-compose up
 <img src="https://github.com/cheremyha/pictures_for_read_me/blob/main/3.png" width="700">
 
 Пагинированная страница с сотрудниками с возможностью фильтрации:  
-<img src="https://github.com/cheremyha/pictures_for_read_me/blob/main/4.png" width="700">
+<img src="https://github.com/cheremyha/pictures_for_read_me/blob/main/7.png" width="700">
 
 <p>Админка с деревом и меню:<p>
 <img src="https://github.com/cheremyha/pictures_for_read_me/blob/main/5.png" width="700">
