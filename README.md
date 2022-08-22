@@ -24,13 +24,13 @@ docker-compose up
 <img src="https://github.com/cheremyha/pictures_for_read_me/blob/main/2.png" width="800">
 
 Дерево сотрудников могло бы выглядеть как-то так(раскрывающееся, с кнопками):
-<img src="https://github.com/cheremyha/pictures_for_read_me/blob/main/6.png" width="800">
+<img src="https://github.com/cheremyha/pictures_for_read_me/blob/main/6.png" width="700">
 
 Но пока выгллядит вот так, полностью статично и не производительно:( 
-<img src="https://github.com/cheremyha/pictures_for_read_me/blob/main/3.png" width="800">
+<img src="https://github.com/cheremyha/pictures_for_read_me/blob/main/3.png" width="700">
 
 Пагинированная страница с сотрудниками с возможностью фильтрации:  
-<img src="https://github.com/cheremyha/pictures_for_read_me/blob/main/4.png" width="800">
+<img src="https://github.com/cheremyha/pictures_for_read_me/blob/main/4.png" width="700">
 
-Админка с деревом и меню:
-<img src="https://github.com/cheremyha/pictures_for_read_me/blob/main/5.png" width="800">
+<p>Админка с деревом и меню:<p>
+<img src="https://github.com/cheremyha/pictures_for_read_me/blob/main/5.png" width="700">
