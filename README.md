@@ -41,3 +41,6 @@ docker-compose up
 
 <p>Админка с деревом и меню:<p>
 <img src="https://github.com/cheremyha/pictures_for_read_me/blob/main/5.png" width="700">
+
+ <p>Админка и сайт по возможности русифицированы ( адаптировано под русскоязычного юзера ) :<p>
+<img src="https://github.com/cheremyha/pictures_for_read_me/blob/main/9.png" width="700">
