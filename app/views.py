@@ -10,7 +10,7 @@ from .filters import EmployeesFilter
 
 def show_employees(request):
     """ This view for page with static employee tree """
-    template = loader.get_template('app/employees_list.html')
+    template = loader.get_template('app/static_tree_page.html')
     annotated_list = Employees.get_annotated_list()
     context = {'annotated_list': annotated_list}
     return HttpResponse(template.render(context, request))
@@ -19,7 +19,7 @@ def show_employees(request):
 class EmployeesPaginator(LoginRequiredMixin, ListView):
     """ This is the view for the paginated employees page. """
     model = Employees
-    template_name = 'app/employees_with_paginate.html'
+    template_name = 'app/paginated_page_with_employees.html'
     context_object_name = 'employees'
     ordering = ['depth']
     paginate_by = 20
@@ -38,7 +38,7 @@ class EmployeesPaginator(LoginRequiredMixin, ListView):
 
 def tree_menu(request):
     """ This view for new page with not static employees tree, but it does not work yet. """
-    template = loader.get_template('app/tree_menu.html')
+    template = loader.get_template('app/dynamic_tree_page_with_menu.html')
     annotated_list = Employees.get_annotated_list()
     context = {'annotated_list': annotated_list}
     return HttpResponse(template.render(context, request))
