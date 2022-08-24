@@ -30,11 +30,16 @@ docker-compose up
 <p>( == подтвержение что разлогинивание прошло успешно):</p>
 <img src="https://github.com/cheremyha/pictures_for_read_me/blob/main/8.png" width="800">
 
-Дерево сотрудников могло бы выглядеть как-то так(раскрывающееся, с кнопками):
-<img src="https://github.com/cheremyha/pictures_for_read_me/blob/main/6.png" width="700">
-
-Но пока выгллядит вот так, полностью статично и не производительно:( 
+Страница со статичным деревом сотрудников ( чтобы было видно прогресс ) 
 <img src="https://github.com/cheremyha/pictures_for_read_me/blob/main/3.png" width="700">
+
+<p>Страница со динамичным деревом сотрудников<p>
+( раскрывающееся меню, при нажатии на сотрудника выпадают его подчиненные )
+<img src="https://github.com/cheremyha/pictures_for_read_me/blob/main/10.png" width="600">
+
+<img src="https://github.com/cheremyha/pictures_for_read_me/blob/main/11.png" width="600">
+
+<img src="https://github.com/cheremyha/pictures_for_read_me/blob/main/12.png" width="600">
 
 Пагинированная страница с сотрудниками с возможностью фильтрации:  
 <img src="https://github.com/cheremyha/pictures_for_read_me/blob/main/7.png" width="700">
