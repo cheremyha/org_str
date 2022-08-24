@@ -1,75 +1,35 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
 {% load static %}
 <head>
-    <meta charset="UTF-8">
-    <title>Орг структура с меню</title>
-
+    <title> Динамичное дерево с меню </title>
     <!-- Bootstrap core CSS -->
-    <link href="{% static 'twitter-bootstrap/min.css' %}" rel="stylesheet">
-    <!-- Bootstrap core JavaScript -->
-    <script src="{% static 'twitter-bootstrap/min.js' %}"></script>
-
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'twitter-bootstrap/twitter_bootstrap.min.css' %}" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-      <div class="col-md-12 text-start">
-        <h2>Bootstrap 3 Left Multilevel Menu (Treeview)</h2>
-      </div>
-      <div class="col-md-3">
-
-        <ul class="nav nav-list-main">
-          <li><label class="nav-toggle nav-header"><span class="nav-toggle-icon glyphicon glyphicon-chevron-right"></span> <a href="https://www.google.com/">Header 1</a></label>
-            <ul class="nav nav-list nav-left-ml">
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><label class="nav-toggle nav-header"><span class="nav-toggle-icon glyphicon glyphicon-chevron-right"></span> <a href="https://www.google.com/">Header 1.1</a></label>
-                <ul class="nav nav-list nav-left-ml">
-                  <li><a href="#">Link</a></li>
-                  <li><a href="#">Link</a></li>
-                  <li><label class="nav-toggle nav-header"><span class="nav-toggle-icon glyphicon glyphicon-chevron-right"></span> <a href="https://www.google.com/">Header 1.1.1</a></label>
-                    <ul class="nav nav-list nav-left-ml">
-                      <li><a href="#">Link</a></li>
-                      <li><a href="#">Link</a></li>
-                    </ul>
-                  </li>
+    <div class="container" style="margin-top:30px;">
+        <div class="row">
+            <div class="col-lg-12 text-start">
+                <ul id="tree1">
+                    {% for item, info in annotated_list %}
+                        {% if info.open and info.level %}
+                            <ul> <li>
+                        {% else %}
+                            </li><li>
+                        {% endif %}
+                        {{item.position }} : <a href="#">{{item.first_name }}</a>, <a href="#">{{item.last_name }}</a>
+                        {% for close in info.close %}
+                                </li></ul>
+                        {% endfor %}
+                    {% endfor %}
                 </ul>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-divider"></li>
-          <li><label class="nav-toggle nav-header"><span>Header 2</span></label>
-            <ul class="nav nav-list nav-left-ml">
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><label class="nav-toggle nav-header"><span>Header 2.1</span></label>
-                <ul class="nav nav-list nav-left-ml">
-                  <li><a href="#">Link</a></li>
-                  <li><a href="#">Link</a></li>
-                  <li><label class="nav-toggle nav-header"><span>Header 2.1.1</span></label>
-                    <ul class="nav nav-list nav-left-ml">
-                      <li><a href="#">Link</a></li>
-                      <li><a href="#">Link</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li><label class="nav-toggle nav-header"><span>Header 2.2</span></label>
-                <ul class="nav nav-list nav-left-ml">
-                  <li><a href="#">Link</a></li>
-                  <li><a href="#">Link</a></li>
-                  <li><label class="nav-toggle nav-header"><span>Header 2.2.1</span></label>
-                    <ul class="nav nav-list nav-left-ml">
-                      <li><a href="#">Link</a></li>
-                      <li><a href="#">Link</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
+            </div>
+        </div>
     </div>
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'vendor/jquery/jquery.slim.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'twitter-bootstrap/twitter_bootstrap.min.js' %}"></script>
 </body>
 </html>

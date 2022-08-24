@@ -8,7 +8,7 @@ from .models import Employees, Positions
 from .filters import EmployeesFilter
 
 
-def show_employees(request):
+def static_tree_page_view(request):
     """ This view for page with static employee tree """
     template = loader.get_template('app/static_tree_page.html')
     annotated_list = Employees.get_annotated_list()
@@ -36,8 +36,8 @@ class EmployeesPaginator(LoginRequiredMixin, ListView):
         return EmployeesFilter(self.request.GET, queryset=queryset).qs
 
 
-def tree_menu(request):
-    """ This view for new page with not static employees tree, but it does not work yet. """
+def dynamic_tree_page_view(request):
+    """ This view for new dynamic tree page with menu. """
     template = loader.get_template('app/dynamic_tree_page_with_menu.html')
     annotated_list = Employees.get_annotated_list()
     context = {'annotated_list': annotated_list}
