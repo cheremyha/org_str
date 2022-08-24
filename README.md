@@ -24,7 +24,7 @@ docker-compose up
 <img src="https://github.com/cheremyha/pictures_for_read_me/blob/main/1.png" width="800">
 
 Пройдя авторизацию вы попадаете на главную с навигацей по страницам сайта:
-<img src="https://github.com/cheremyha/pictures_for_read_me/blob/main/2.png" width="800">
+<img src="https://github.com/cheremyha/pictures_for_read_me/blob/main/13.png" width="800">
 
 <p>Кнопка Выйти работает, при нажатии на нее вас разлогинет и перенаправит на стриницу </p>
 <p>( == подтвержение что разлогинивание прошло успешно):</p>
