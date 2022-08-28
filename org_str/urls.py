@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from app.views import EmployeesPaginator, static_tree_page_view, dynamic_tree_page_view
+from app.views import (
+    EmployeesPaginator,
+    EmployeeCreateView,
+    static_tree_page_view,
+    dynamic_tree_page_view,
+)
 
 
 urlpatterns = [
@@ -25,4 +30,5 @@ urlpatterns = [
     path('static_tree_page', static_tree_page_view),
     path('dynamic_tree_page', dynamic_tree_page_view),
     path('paginate_list', EmployeesPaginator.as_view()),
+    path('create/', EmployeeCreateView.as_view()),
 ]

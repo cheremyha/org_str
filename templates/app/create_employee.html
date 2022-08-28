@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% extends "main.html" %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="col-lg-12 text-center">
+        <p></p>
+        <form method="POST">
+            {% csrf_token %}
+            <p></p>
+            <label for="first_name">Имя</label>&nbsp
+            <input name="first_name" type="text">&nbsp
+
+            <label for="last_name">Фамилия</label>&nbsp
+            <input name="last_name" type="text">&nbsp
+
+            <label for="salary">Зарплата</label>&nbsp
+            <input name="salary" type="number" step="0.01" min=0>&nbsp
+
+            <label for="date_employment">Дата трудоустройства</label>&nbsp
+            <input name="date_employment" type="date" value="2022-09-01">&nbsp
+            <p></p>
+
+            <!-- Здесь будет список должностей создаваемого сотрудника.  -->
+            <label>Должность создаваемого сотрудника</label>&nbsp
+            <select name="position_id" size="1">
+                {% for position in positions %}
+                    <option value="{{ position.id }}">
+                        {{ position.position_name }}
+                    </option>
+                {% endfor %}
+            </select>
+            <p></p>
+
+            <!-- Здесь будет список сотрудников для выбора руководителя.  -->
+            <label >Выберите руководителя</label>&nbsp
+            <select name="chief_id" size="1">
+                {% for item, info in employees_list %}
+                    <option value="{{ item.id }}">
+                        <b>{{item.position }}</b> : {{ item.first_name }}, {{ item.last_name }}
+                    </option>
+                {% endfor %}
+            </select>
+            <p></p>
+
+            <input type="submit" value="Добавить сотрудника">
+        </form>
+    </div>
+</body>
+</html>
+{% endblock %}
