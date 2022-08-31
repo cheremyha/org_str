@@ -34,15 +34,18 @@ docker-compose up
 <img src="https://github.com/cheremyha/pictures_for_read_me/blob/main/3.png" width="700">
 
 <p>Страница со динамичным деревом сотрудников<p>
-( раскрывающееся меню, при нажатии на сотрудника выпадают его подчиненные )
-<img src="https://github.com/cheremyha/pictures_for_read_me/blob/main/10.png" width="600">
+( раскрывающееся меню, при нажатии на сотрудника выпадают его подчиненные, но только следующего уровня! )
+<p>При нажатии на Генерального директора выпадают только его дирекора, и так для каждого. <p>
+<img src="https://github.com/cheremyha/pictures_for_read_me/blob/main/23.png" width="700">
 
-<img src="https://github.com/cheremyha/pictures_for_read_me/blob/main/11.png" width="600">
+<img src="https://github.com/cheremyha/pictures_for_read_me/blob/main/19.png" width="700">
 
-<img src="https://github.com/cheremyha/pictures_for_read_me/blob/main/12.png" width="600">
-
-Пагинированная страница с сотрудниками с возможностью фильтрации:  
-<img src="https://github.com/cheremyha/pictures_for_read_me/blob/main/7.png" width="700">
+Пагинированная страница с сотрудниками с возможностью фильтрации и ссылкой для редактирования этого сотрудника:  
+<img src="https://github.com/cheremyha/pictures_for_read_me/blob/main/20.png" width="700">
+ 
+При нажатии на сслыку редактировать заргужаеться форма для редактирования сотрудника. 
+<p>C пока не очень аккуратой версткой и не адапитированными полями<p>   
+<img src="https://github.com/cheremyha/pictures_for_read_me/blob/main/24.png" width="700">
 
  Страница с помощью которой можно добавлять новых сотрудников через сайт, а не админку:  
 <img src="https://github.com/cheremyha/pictures_for_read_me/blob/main/18.png" width="800">
@@ -59,4 +62,4 @@ docker-compose up
 <img src="https://github.com/cheremyha/pictures_for_read_me/blob/main/5.png" width="700">
 
  <p>Админка и сайт по возможности русифицированы ( адаптировано под русскоязычного юзера ) :<p>
-<img src="https://github.com/cheremyha/pictures_for_read_me/blob/main/9.png" width="700">
+<img src="https://github.com/cheremyha/pictures_for_read_me/blob/main/22.png" width="700">
