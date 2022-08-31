@@ -27,7 +27,8 @@ class Employees(MP_Node):
     position = models.ForeignKey('Positions', on_delete=models.PROTECT,
                                  verbose_name='Должность')
     date_employment = models.DateField(verbose_name='Дата трудоустройства')
-    salary = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='Зарплата')
+    salary = models.DecimalField(max_digits=10, decimal_places=2,
+                                 verbose_name='Зарплата')
 
     node_order_by = ['position']
 
@@ -36,12 +37,17 @@ class Employees(MP_Node):
         Let's change the display of model instances
         on the administrator's site.
         """
-        return 'Employee: {}'.format(self.position)
+        return '{0} {1}'.format(self.first_name, self.last_name)
 
     class Meta:
         """ Let's change the name of position model in the admin site. """
         verbose_name_plural = 'Сотрудники'
         verbose_name = 'Сотрудник'
+
+
+
+
+
 
 
 

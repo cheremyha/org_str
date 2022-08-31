@@ -13,38 +13,43 @@
         <div class="row">
             <div class="col-lg-9 text-center">
                 {% block content %}
+                <p></p>
                 <form method="GET">
                     {{ filter.form }}
                     <input type="submit" value="Найти">
                 </form>
+                <p></p>
                 <table>
                    <thead>
                    <th>
-                       Позиция&nbsp; &nbsp;&nbsp;
+                       Позиция
                    </th>
                    <th>
-                       Имя&nbsp; &nbsp;&nbsp;
+                       Имя
                    </th>
                    <th>
-                       Фамилия&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+                       Фамилия
                    </th>
                    <th>
-                       Начало работы в компании&nbsp; &nbsp;&nbsp;
+                       Начало работы в компании
                    </th>
                    </thead>
-                    {% for employee in object_list %} &nbsp; &nbsp;&nbsp;
+                    {% for employee in object_list %}
                     <tr>
                         <td>
-                            {{ employee.position.position_name }}&nbsp; &nbsp;&nbsp;
+                            {{ employee.position.position_name }}
                         </td>
                         <td>
-                            {{ employee.first_name }}&nbsp; &nbsp;&nbsp;
+                            {{ employee.first_name }}
                         </td>
                         <td>
-                            {{ employee.last_name }}&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+                            {{ employee.last_name }}
                         </td>
                         <td>
-                            {{ employee.date_employment }}&nbsp; &nbsp;&nbsp;
+                            {{ employee.date_employment }}
+                        </td>
+                        <td>
+                             <a href="{% url 'employees_update' employee.id %}">Редактировать</a>
                         </td>
                     </tr>
                     {% endfor %}

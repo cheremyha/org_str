@@ -18,6 +18,7 @@ from django.urls import path, include
 from app.views import (
     EmployeesPaginator,
     EmployeeCreateView,
+    EmployeesUpdateView,
     static_tree_page_view,
     dynamic_tree_page_view,
 )
@@ -31,4 +32,6 @@ urlpatterns = [
     path('dynamic_tree_page', dynamic_tree_page_view),
     path('paginate_list', EmployeesPaginator.as_view()),
     path('create/', EmployeeCreateView.as_view()),
+    path('update/<int:pk>/', EmployeesUpdateView.as_view(),
+         name='employees_update')
 ]

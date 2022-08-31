@@ -1,11 +1,12 @@
 """ Let`s create different views for employees"""
 from django.http import HttpResponse
 from django.template import loader
-from django.views.generic import ListView
+from django.views.generic import ListView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .models import Employees, Positions
 from .filters import EmployeesFilter
+from .forms import EmployeesUpdateForm
 
 
 def static_tree_page_view(request):
@@ -42,6 +43,7 @@ def dynamic_tree_page_view(request):
     annotated_list = Employees.get_annotated_list()
     context = {'annotated_list': annotated_list}
     return HttpResponse(template.render(context, request))
+
 
 class EmployeeCreateView(LoginRequiredMixin, ListView):
     """ This view for the new employee creation page. """
@@ -96,3 +98,22 @@ class EmployeeCreateView(LoginRequiredMixin, ListView):
 
         # If a new employee is successfully added, then we display a message to the user about this not
         return HttpResponse(template.render(context, request))
+
+
+class EmployeesUpdateView(UpdateView):
+    """
+    This class implements a view for updating employees
+    using the form EmployeesUpdateForm.
+    """
+    form_class = EmployeesUpdateForm
+    template_name = 'app/update_employee.html'
+
+    # It's all just a temporary fix, It needs to be redone.
+    success_url = '/'
+
+    def get_object(self, **kwargs):
+        """
+        Return the employee's data by his employees_id.
+        """
+        employees_id = self.kwargs.get('pk')
+        return Employees.objects.get(pk=employees_id)

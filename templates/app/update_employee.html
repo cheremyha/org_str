@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% extends "main.html" %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Обновить сотрудника</title>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="fieldWrapper">
+                {{ field.label_tag }} {{ field }}
+            </div>
+        {% endfor %}
+        <input type="submit" value="Обновить">
+    </form>
+</body>
+</html>
+{% endblock %}

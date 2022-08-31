@@ -133,7 +133,7 @@ def created_subordinate(chief_id: int, position_name: str) -> None:
     print(f'Subordinate of the chief_id =={chief_id} creation completed successfully, {created_employee.id}')
 
 
-# Employees.objects.all().delete()
+Employees.objects.all().delete()
 
 # Let`s create seo
 created_seo()
@@ -178,7 +178,7 @@ all_tl = Employees.objects.all().filter(position_id=21).values('id')
 
 # Let`s create a senior specialists
 # Number of a senior specialists for each team leader ( team leader == tl )
-number_senior_specialists = 10
+number_senior_specialists = 6
 for cur_tl_id in all_tl:
     cur_tl_id = cur_tl_id['id']
     cur_tl = get_employee(employee_id=cur_tl_id)
@@ -192,7 +192,7 @@ all_seniors = Employees.objects.all().filter(position_id=22).values('id')
 
 # Let`s create middle specialists
 # Number of middle specialists for each senior specialist ( specialist == ss )
-number_middle_specialists = 15
+number_middle_specialists = 4
 for cur_ss_id in all_seniors:
     cur_ss_id = cur_ss_id['id']
     cur_ss = get_employee(employee_id=cur_ss_id)
@@ -201,7 +201,7 @@ for cur_ss_id in all_seniors:
 
 # Let`s create junior specialists
 # Number of junior specialists for each senior specialist ( junior specialists == js )
-number_junior_specialists = 5
+number_junior_specialists = 2
 for cur_ss_id in all_seniors:
     cur_ss_id = cur_ss_id['id']
     cur_ss = get_employee(employee_id=cur_ss_id)
