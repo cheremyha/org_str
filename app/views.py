@@ -4,9 +4,15 @@ from django.template import loader
 from django.views.generic import ListView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
+from rest_framework import viewsets
+from rest_framework import permissions
+
+from django_filters.rest_framework import DjangoFilterBackend
+
 from .models import Employees, Positions
 from .filters import EmployeesFilter
 from .forms import EmployeesUpdateForm
+from .serializers import PositionsSerializer, EmployeesSerializer
 
 
 def static_tree_page_view(request):
@@ -117,3 +123,17 @@ class EmployeesUpdateView(UpdateView):
         """
         employees_id = self.kwargs.get('pk')
         return Employees.objects.get(pk=employees_id)
+
+
+class PositionsViewset(viewsets.ModelViewSet):
+    queryset = Positions.objects.all()
+    serializer_class = PositionsSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+
+class EmployeesViewset(viewsets.ModelViewSet):
+    queryset = Employees.objects.all()
+    serializer_class = EmployeesSerializer
+    permission_classes = [permissions.IsAuthenticated]
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ["position_id", "id"]

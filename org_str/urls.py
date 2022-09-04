@@ -15,14 +15,22 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.views.generic import TemplateView
+from rest_framework import routers
+from . yasg import urlpatterns as doc_urls
 from app.views import (
     EmployeesPaginator,
     EmployeeCreateView,
     EmployeesUpdateView,
     static_tree_page_view,
     dynamic_tree_page_view,
+    PositionsViewset,
+    EmployeesViewset,
 )
 
+router = routers.DefaultRouter()
+router.register(r'positions', PositionsViewset)
+router.register(r'employees', EmployeesViewset)
 
 urlpatterns = [
     path('', include('protect.urls')),
@@ -33,5 +41,9 @@ urlpatterns = [
     path('paginate_list', EmployeesPaginator.as_view()),
     path('create/', EmployeeCreateView.as_view()),
     path('update/<int:pk>/', EmployeesUpdateView.as_view(),
-         name='employees_update')
+         name='employees_update'),
+    path('api', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]
+
+urlpatterns += doc_urls

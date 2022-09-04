@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'django_filters',
     'sign',
     'protect',
+    'rest_framework',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
