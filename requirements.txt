@@ -5,8 +5,9 @@ django-filter==22.1
 DateTime==4.5
 Faker==14.1.0
 typing==3.7.4.3
-rest_framework==3.13.1
-drf_yasg==1.21.3
+djangorestframework==3.13.1
+Markdown==3.4.1
+drf-yasg==1.21.3
 
 
 
