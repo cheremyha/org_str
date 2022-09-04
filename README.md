@@ -24,7 +24,7 @@ docker-compose up
 <img src="https://github.com/cheremyha/pictures_for_read_me/blob/main/1.png" width="800">
 
 Пройдя авторизацию вы попадаете на главную с навигацей по страницам сайта:
-<img src="https://github.com/cheremyha/pictures_for_read_me/blob/main/14.png" width="800">
+<img src="https://github.com/cheremyha/pictures_for_read_me/blob/main/29.png" width="800">
 
 <p>Кнопка Выйти работает, при нажатии на нее вас разлогинет и перенаправит на стриницу </p>
 <p>( == подтвержение что разлогинивание прошло успешно):</p>
@@ -32,6 +32,8 @@ docker-compose up
 
 Страница со статичным деревом сотрудников ( чтобы было видно прогресс ) 
 <img src="https://github.com/cheremyha/pictures_for_read_me/blob/main/3.png" width="700">
+
+
 
 <p>Страница со динамичным деревом сотрудников<p>
 ( раскрывающееся меню, при нажатии на сотрудника выпадают его подчиненные, но только следующего уровня! )
@@ -63,3 +65,14 @@ docker-compose up
 
  <p>Админка и сайт по возможности русифицированы ( адаптировано под русскоязычного юзера ) :<p>
 <img src="https://github.com/cheremyha/pictures_for_read_me/blob/main/22.png" width="700">
+
+<p>Сервер API представляет собой 2 GET метода. Один возвращает все должности, второй всех сотрудников с возможностью фильтровать по ID сотрудика или ID его позиции (в этом случае отдаем всех сотрудников работающих на этой должности) <p>
+<p>Проверим работу метода создав клиента:<p>
+<img src="https://github.com/cheremyha/pictures_for_read_me/blob/main/25.png" width="900">
+<p>Убедились что сервер отвечает, и отвечает так как мы того ожидаем.<p> 
+
+<p>Протестируем через Open API, запросим всех сотрудников с position_id =27 (запросим всех мидлов) :<p>
+<img src="https://github.com/cheremyha/pictures_for_read_me/blob/main/27.png" width="800">
+
+<p>Ждем ответ немного долго, видим что метод работает ожидаемо:<p>
+<img src="https://github.com/cheremyha/pictures_for_read_me/blob/main/28.png" width="800">
