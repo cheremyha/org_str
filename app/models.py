@@ -1,4 +1,4 @@
-""" Let`s create models for employees and position"""
+""" Let`s create models for employees and position. """
 from django.db import models
 from treebeard.mp_tree import MP_Node
 

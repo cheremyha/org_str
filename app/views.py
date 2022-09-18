@@ -4,8 +4,7 @@ from django.template import loader
 from django.views.generic import ListView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-from rest_framework import viewsets
-from rest_framework import permissions
+from rest_framework import viewsets, permissions
 
 from django_filters.rest_framework import DjangoFilterBackend
 

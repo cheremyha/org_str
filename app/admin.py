@@ -1,8 +1,9 @@
 from django.contrib import admin
-from .models import Employees, Positions
 
 from treebeard.admin import TreeAdmin
 from treebeard.forms import movenodeform_factory
+
+from .models import Employees, Positions
 
 
 class MyAdmin(TreeAdmin):

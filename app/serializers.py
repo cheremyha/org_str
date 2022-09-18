@@ -1,5 +1,5 @@
-from .models import Positions, Employees
 from rest_framework import serializers
+from .models import Positions, Employees
 
 
 class PositionsSerializer(serializers.HyperlinkedModelSerializer):
