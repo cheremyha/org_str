@@ -10,7 +10,7 @@ def create_con():
     Set connection between local script and django project.
     :return:None
     """
-    os.environ['DJANGO_SETTINGS_MODULE'] = 'org_str.org_str.settings'
+    os.environ['DJANGO_SETTINGS_MODULE'] = 'org_str.settings'
     application = get_wsgi_application()
 
 
