@@ -34,15 +34,15 @@ router.register(r'employees', EmployeesViewset)
 
 urlpatterns = [
     path('', include('protect.urls')),
-    path('sign/', include('sign.urls')),
-    path('admin/', admin.site.urls),
-    path('static_tree_page', static_tree_page_view),
-    path('dynamic_tree_page', dynamic_tree_page_view),
-    path('paginate_list', EmployeesPaginator.as_view()),
+    path('sign', include('sign.urls')),
+    path('admin', admin.site.urls),
+    path('static_tree_page/', static_tree_page_view),
+    path('dynamic_tree_page/', dynamic_tree_page_view),
+    path('paginate_list/', EmployeesPaginator.as_view()),
     path('create/', EmployeeCreateView.as_view()),
     path('update/<int:pk>/', EmployeesUpdateView.as_view(),
          name='employees_update'),
-    path('api', include(router.urls)),
+    path('api/', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]
 
