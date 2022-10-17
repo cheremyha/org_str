@@ -76,3 +76,7 @@ docker-compose up
 
 <p>Ждем ответ немного долго, видим что метод работает ожидаемо:<p>
 <img src="https://github.com/cheremyha/pictures_for_read_me/blob/main/28.png" width="800">
+ 
+<p>Схема БД проекта (только кастомные таблицы) <p>
+<p> https://dbdiagram.io/d/634dcc8f47094101957f7337 <p> 
+<img src="https://github.com/cheremyha/pictures_for_read_me/blob/main/org_str_database.png" width="800">
